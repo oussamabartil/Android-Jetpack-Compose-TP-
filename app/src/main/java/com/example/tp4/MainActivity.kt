@@ -16,30 +16,32 @@ class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
-            TP4Theme {
-                // A surface container using the 'background' color from the theme
+//            TP4Theme {
+//                // A surface container using the 'background' color from the theme
 //                Surface(
 //                    modifier = Modifier.fillMaxSize(),
 //                    color = MaterialTheme.colors.background
 //                ) {
 //                    Greeting("Android")
 //                }
-                Text("Bonjour tout le monde !")
+//            }
+//            Text("Bonjour tout le monde !")
 
-            }
+            setContent(null, { Text("OK") })
+
         }
     }
 }
 
-@Composable
-fun Greeting(name: String) {
-    Text(text = "Hello $name!")
-}
-
-@Preview(showBackground = true)
-@Composable
-fun DefaultPreview() {
-    TP4Theme {
-        Greeting("Android")
-    }
-}
+//@Composable
+//fun Greeting(name: String) {
+//    Text(text = "Hello $name!")
+//}
+//
+//@Preview(showBackground = true)
+//@Composable
+//fun DefaultPreview() {
+//    TP4Theme {
+//        Greeting("Android")
+//    }
+//}
