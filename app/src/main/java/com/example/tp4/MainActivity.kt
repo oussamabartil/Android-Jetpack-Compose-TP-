@@ -1,5 +1,6 @@
 package com.example.tp4
 
+
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
@@ -9,7 +10,10 @@ import androidx.compose.material.Surface
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
+import androidx.compose.ui.unit.sp
 import com.example.tp4.ui.theme.TP4Theme
 
 class MainActivity : ComponentActivity() {
@@ -27,21 +31,22 @@ class MainActivity : ComponentActivity() {
 //            }
 //            Text("Bonjour tout le monde !")
 
-            setContent(null, { Text("OK") })
+
+            //Expression Lambda
+         //   setContent(null, { Text("OK") })
+
+            //Paramétrage de l’apparence
+//            setContent {
+//                Text(
+//                    text = "Bonjour tout le monde !",
+//                    fontWeight = FontWeight.Bold,
+//                    fontSize = 32.sp,
+//                    color = Color.Magenta
+//                )
+//            }
+
 
         }
     }
 }
 
-//@Composable
-//fun Greeting(name: String) {
-//    Text(text = "Hello $name!")
-//}
-//
-//@Preview(showBackground = true)
-//@Composable
-//fun DefaultPreview() {
-//    TP4Theme {
-//        Greeting("Android")
-//    }
-//}
