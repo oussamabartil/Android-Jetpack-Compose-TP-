@@ -4,6 +4,8 @@ package com.example.tp4
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
+import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Surface
@@ -55,15 +57,43 @@ class MainActivity : ComponentActivity() {
 }
 
 //Fonctions composables personnelles
-@Composable
-fun Accueil(name: String) {
-    Text(text = "Bonjour $name", fontSize=20.sp)
-}
+//@Composable
+//fun Accueil(name: String) {
+//    Text(text = "Bonjour $name", fontSize=20.sp)
+//}
 
-//Prévisualisation
+//Prévisualisation: Mettez l’éditeur en mode Split. L’écran se partage en deux, le source à gauche et le résultat
+//visuel à droite. C’est grâce à l’annotation @Preview.
 @Preview
 @Composable
 fun AccueilPreview() {
     Accueil(name = "numéro 10")
+}
+
+//Structure d’une interface
+//@Composable
+//fun Accueil(name: String) {
+//    Text(text = "Bonjour $name", fontSize=20.sp)
+//    Text(text = "Je vois de grands progrès", color = Color.Blue)
+//}
+
+//Positionnement des elements
+//Column est un LinearLayout vertical :
+//@Composable
+//fun Accueil(name: String) {
+//    Column {
+//        Text(text = "Bonjour $name", fontSize=20.sp)
+//        Text(text = "Je vois de grands progrès", color = Color.Blue)
+//    }
+//}
+
+
+//Utilisation de Row.
+@Composable
+fun Accueil(name: String) {
+    Row {
+        Text(text = "Bonjour $name", fontSize=20.sp)
+        Text(text = "Je vois de grands progrès", color = Color.Blue)
+    }
 }
 
