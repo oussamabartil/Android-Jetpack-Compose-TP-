@@ -45,8 +45,14 @@ class MainActivity : ComponentActivity() {
 //                )
 //            }
 
-
+            //Utilisation de la fonction composable personnelle Accueil
+            Accueil(name = "numéro 6")
         }
     }
 }
 
+//Fonctions composables personnelles
+@Composable
+fun Accueil(name: String) {
+    Text(text = "Bonjour $name", fontSize=20.sp)
+}
