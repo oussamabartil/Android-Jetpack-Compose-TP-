@@ -46,7 +46,10 @@ class MainActivity : ComponentActivity() {
 //            }
 
             //Utilisation de la fonction composable personnelle Accueil
-            Accueil(name = "numéro 6")
+//            Accueil(name = "numéro 6")
+
+            //Utilisation de la fonction Prévisualisation
+            AccueilPreview()
         }
     }
 }
@@ -56,3 +59,11 @@ class MainActivity : ComponentActivity() {
 fun Accueil(name: String) {
     Text(text = "Bonjour $name", fontSize=20.sp)
 }
+
+//Prévisualisation
+@Preview
+@Composable
+fun AccueilPreview() {
+    Accueil(name = "numéro 10")
+}
+
