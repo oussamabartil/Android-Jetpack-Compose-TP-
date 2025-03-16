@@ -57,6 +57,11 @@ class MainActivity : ComponentActivity() {
 //            AccueilPreview()
             //Utilisation de la fonction AccueilMultiple pour voir les model et vue
             AccueilMultiplePreview()
+
+
+            //Model  AccueilMultipleSeulementJ cette  fonction
+            //ne salue que les personnes dont le nom commence par j.
+            AccueilMultipleSeulementJPreview()
         }
     }
 }
@@ -146,4 +151,20 @@ fun AccueilMultiple(names: List<String>) {
 @Composable
 fun AccueilMultiplePreview() {
     AccueilMultiple(listOf("pierre", "paul", "jacques"))
+}
+
+@Composable
+fun AccueilMultipleSeulementJ(names: List<String>) {
+    Column {
+        for (name in names) {
+            if (name.startsWith("j")) {
+                Text(text = "Bonjour $name !", modifier = Modifier.padding(4.dp))
+            }
+        }
+    }
+}
+@Preview
+@Composable
+fun AccueilMultipleSeulementJPreview() {
+    AccueilMultipleSeulementJ(listOf("paul", "jean", "pierre", "jacques"))
 }
