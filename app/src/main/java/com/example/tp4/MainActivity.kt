@@ -17,6 +17,7 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.sp
 import com.example.tp4.ui.theme.TP4Theme
+//import androidx.compose.material3.*
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -97,3 +98,31 @@ fun Accueil(name: String) {
     }
 }
 
+
+//Utilisation de ElevatedCard
+
+//@Composable
+//fun Accueil(name: String) {
+//    ElevatedCard {
+//        Text(text = "Bonjour $name", fontSize=20.sp)
+//        Text(text = "Je vois de grands progrès", color = Color.Blue)
+//    }
+//}
+
+
+//Paramétrage des vues
+@Composable
+fun Accueil(name: String) {
+    ElevatedCard {
+        Column(
+            horizontalAlignment = Alignment.CenterHorizontally,
+            modifier = Modifier
+                .fillMaxWidth()
+                .padding(8.dp)
+
+        ) {
+            Text(text = "Bonjour $name", fontSize=20.sp)
+            Text(text = "Je vois de grands progrès", color = Color.Blue)
+        }
+    }
+}
