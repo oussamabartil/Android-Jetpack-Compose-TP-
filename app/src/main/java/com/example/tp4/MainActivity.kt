@@ -11,6 +11,8 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Surface
 import androidx.compose.material.Text
+import androidx.compose.material3.ColorScheme
+import androidx.compose.material3.lightColorScheme
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
@@ -18,8 +20,11 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import com.example.tp4.feu3.ui.MainActivityFeu3View
 import com.example.tp4.ui.theme.TP4Theme
 //import androidx.compose.material3.*
+
+import androidx.compose.material3.Surface
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -56,14 +61,49 @@ class MainActivity : ComponentActivity() {
             //Utilisation de la fonction Prévisualisation
 //            AccueilPreview()
             //Utilisation de la fonction AccueilMultiple pour voir les model et vue
-            AccueilMultiplePreview()
+//            AccueilMultiplePreview()
 
 
             //Model  AccueilMultipleSeulementJ cette  fonction
             //ne salue que les personnes dont le nom commence par j.
-            AccueilMultipleSeulementJPreview()
+//            AccueilMultipleSeulementJPreview()
+
+
+            TP4Theme {
+// A surface container using the
+
+//                background
+//
+//                color from the theme
+
+                        Surface(
+                            modifier = Modifier.fillMaxSize(),
+                            color = MaterialTheme.colors.background
+                        ) {
+                            MainActivityFeu3View()
+                        }
+            }
         }
     }
+}
+
+//@Composable
+//fun TP4Theme(content: @Composable () -> Unit) {
+//    MaterialTheme(
+//        colorScheme = lightColorScheme(), // Assurez-vous que c'est bien défini
+//        typography = Typography,
+//        content = content
+//    )
+//}
+
+@Composable
+fun lightColorScheme(): ColorScheme {
+    return lightColorScheme(
+        primary = Color(0xFF6200EE),
+        onPrimary = Color.White,
+        background = Color(0xFFf2f2f2),  // Définir une couleur de fond ici
+        onBackground = Color.Black
+    )
 }
 
 //Fonctions composables personnelles
