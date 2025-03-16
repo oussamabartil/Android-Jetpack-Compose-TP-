@@ -7,6 +7,7 @@ import androidx.activity.compose.setContent
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.padding
 import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Surface
 import androidx.compose.material.Text
@@ -15,6 +16,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
+import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.example.tp4.ui.theme.TP4Theme
 //import androidx.compose.material3.*
@@ -52,7 +54,9 @@ class MainActivity : ComponentActivity() {
 //            Accueil(name = "numéro 6")
 
             //Utilisation de la fonction Prévisualisation
-            AccueilPreview()
+//            AccueilPreview()
+            //Utilisation de la fonction AccueilMultiple pour voir les model et vue
+            AccueilMultiplePreview()
         }
     }
 }
@@ -111,18 +115,35 @@ fun Accueil(name: String) {
 
 
 //Paramétrage des vues
-@Composable
-fun Accueil(name: String) {
-    ElevatedCard {
-        Column(
-            horizontalAlignment = Alignment.CenterHorizontally,
-            modifier = Modifier
-                .fillMaxWidth()
-                .padding(8.dp)
+//@Composable
+//fun Accueil(name: String) {
+//    ElevatedCard {
+//        Column(
+//            horizontalAlignment = Alignment.CenterHorizontally,
+//            modifier = Modifier
+//                .fillMaxWidth()
+//                .padding(8.dp)
+//
+//        ) {
+//            Text(text = "Bonjour $name", fontSize=20.sp)
+//            Text(text = "Je vois de grands progrès", color = Color.Blue)
+//        }
+//    }
+//}
 
-        ) {
-            Text(text = "Bonjour $name", fontSize=20.sp)
-            Text(text = "Je vois de grands progrès", color = Color.Blue)
+
+
+//Modèle et vue
+@Composable
+fun AccueilMultiple(names: List<String>) {
+    Column {
+        for (name in names) {
+            Text(text = "Bonjour $name !", modifier = Modifier.padding(4.dp))
         }
     }
+}
+@Preview
+@Composable
+fun AccueilMultiplePreview() {
+    AccueilMultiple(listOf("pierre", "paul", "jacques"))
 }
