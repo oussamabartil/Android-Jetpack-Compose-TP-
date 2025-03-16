@@ -4,13 +4,17 @@ package com.example.tp4
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
+import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
+import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Surface
 import androidx.compose.material.Text
+import androidx.compose.material3.Button
 import androidx.compose.material3.ColorScheme
 import androidx.compose.material3.lightColorScheme
 import androidx.compose.runtime.Composable
@@ -25,6 +29,11 @@ import com.example.tp4.ui.theme.TP4Theme
 //import androidx.compose.material3.*
 
 import androidx.compose.material3.Surface
+import androidx.compose.ui.Alignment
+import androidx.lifecycle.viewmodel.compose.viewModel
+import com.example.tp4.carrefour.controller.CarrefourViewModel
+import com.example.tp4.carrefour.ui.CarrefourView
+import com.example.tp4.carrefour.ui.MainActivityCarrefourView
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -76,12 +85,17 @@ class MainActivity : ComponentActivity() {
 //
 //                color from the theme
 
-                        Surface(
-                            modifier = Modifier.fillMaxSize(),
-                            color = MaterialTheme.colors.background
-                        ) {
-                            MainActivityFeu3View()
-                        }
+//                        Surface(
+//                            modifier = Modifier.fillMaxSize(),
+//                            color = MaterialTheme.colors.background
+//                        ) {
+//                            MainActivityFeu3View()
+//                        }
+
+                MainActivityCarrefourView()
+
+
+
             }
         }
     }

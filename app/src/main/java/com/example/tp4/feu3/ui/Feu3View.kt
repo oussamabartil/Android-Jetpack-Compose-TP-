@@ -18,6 +18,7 @@ import androidx.lifecycle.viewmodel.compose.viewModel
 import com.example.tp4.feu3.controller.Feu3ViewModel
 import com.example.tp4.feu3.state.Feu3State
 import androidx.compose.foundation.Canvas
+import com.example.tp4.feu3.state.FeuCouleur
 
 class Feu3View {
 
@@ -144,6 +145,6 @@ private val Color.Companion.Orange: Color
 @Composable
 fun Feu3ViewV3Preview() {
 // une seule des deux lignes suivantes, soit V1, soit V2 (voir § état second)
-    Feu3ViewV3(state = Feu3State(false, true, false)) // pour la V1
-//Feu3ViewV3(state = Feu3State(FeuCouleur.ORANGE)) // pour la V2
+//    Feu3ViewV3(state = Feu3State(false, true, false)) // pour la V1
+Feu3ViewV3(state = Feu3State(FeuCouleur.ORANGE)) // pour la V2
 }
