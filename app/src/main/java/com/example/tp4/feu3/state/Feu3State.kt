@@ -1,6 +1,6 @@
 package com.example.tp4.feu3.state
 
-data class Feu3State(
+data class Feu3StateV1(
     val rouge: Boolean = true,
     val orange: Boolean = false,
     val vert: Boolean = false,

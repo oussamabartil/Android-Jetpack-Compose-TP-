@@ -3,6 +3,8 @@ package com.example.tp4.feu3.controller
 import androidx.compose.runtime.mutableStateOf
 import androidx.lifecycle.ViewModel
 import com.example.tp4.feu3.state.Feu3State
+import com.example.tp4.feu3.state.FeuCouleur
+
 class Feu3ViewModel : ViewModel() {
 // singleton contenant létat, observable mais privé
     private val _state = mutableStateOf(Feu3State())
@@ -21,13 +23,22 @@ class Feu3ViewModel : ViewModel() {
     fun reset() {
         state = Feu3State()
     }
-    fun suivant() {
-        if (state.rouge) {
-            state = Feu3State(false, false, true)
-        } else if (state.vert) {
-            state = Feu3State(false, true, false)
-        } else {
-            state = Feu3State(true, false, false)
-        }
+//    fun suivant() {
+//        if (state.rouge) {
+//            state = Feu3State(false, false, true)
+//        } else if (state.vert) {
+//            state = Feu3State(false, true, false)
+//        } else {
+//            state = Feu3State(true, false, false)
+//        }
+//    }
+fun suivant() {
+    if (state.rouge) {
+        state = state.copy(FeuCouleur.ROUGE)
+    } else if (state.vert) {
+        state = state.copy(FeuCouleur.VERT)
+    } else {
+        state = state.copy(FeuCouleur.ORANGE)
     }
+}
 }
